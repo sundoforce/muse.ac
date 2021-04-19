@@ -53,7 +53,7 @@ const Header = ({ user, onLogout }) => {
             <Link>Sync Play</Link>
             <Link>Tutors</Link>
             {/*<Link>School</Link>*/}
-            <Link>Live TV</Link>
+            <Link>Live Concert</Link>
             <Link to={{ pathname: "https://muzia.net" }} target="_blank">Community</Link>
           {user ? (
             <div className="right">
