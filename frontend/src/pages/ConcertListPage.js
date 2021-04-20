@@ -3,7 +3,7 @@ import HeaderContainer from '../containers/common/HeaderContainer';
 import ConcertListContainer from '../containers/concerts/ConcertListContainer';
 import PaginationContainer from "../containers/posts/PaginationContainer";
 
-const MainPage = () => {
+const ConcertListPage = () => {
     return (
         <>
             <HeaderContainer />
@@ -13,4 +13,4 @@ const MainPage = () => {
     );
 };
 
-export default MainPage;
+export default ConcertListPage;

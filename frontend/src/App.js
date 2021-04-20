@@ -32,8 +32,8 @@ const App = () => {
             <Route component={TutorListPage} path='/tutors'/>
             <Route component={TutorPage} path='/tutor/:tutorId'/>
             {/*Live Concert*/}
-            <Route component={TutorListPage} path='/concerts'/>
-            <Route component={TutorPage} path='/concert/:concertId'/>
+            <Route component={ConcertListPage} path='/concerts'/>
+            <Route component={ConcertPage} path='/concert/:concertId'/>
             {/*게시판 - TODO*/}
             <Route component={PostListPage} path='/@:username'/>
             <Route component={WritePage} path="/write"/>

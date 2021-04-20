@@ -27,12 +27,12 @@ const PlayRoomContent = styled.div`
 
 const PlayRoomViewer = ({ post, error, loading, actionButtons, ownPost }) => {
     // 에러 발생 시
-    // if (error) {
-    //     if (error.response && error.response.status === 404) {
-    //         return <PlayRoomViewerBlock>존재하지 않는 포스트입니다.</PlayRoomViewerBlock>;
-    //     }
-    //     return <PlayRoomViewerBlock>오류 발생!</PlayRoomViewerBlock>;
-    // }
+    if (error) {
+        if (error.response && error.response.status === 404) {
+            return <PlayRoomViewerBlock>존재하지 않는 포스트입니다.</PlayRoomViewerBlock>;
+        }
+        return <PlayRoomViewerBlock>오류 발생!</PlayRoomViewerBlock>;
+    }
 
     // 로딩중이거나, 아직 포스트 데이터가 없을 시
     if (loading || !post) {
@@ -46,6 +46,7 @@ const PlayRoomViewer = ({ post, error, loading, actionButtons, ownPost }) => {
                 <title>{title} - Muse.ac</title>
             </Helmet>
 
+            ㅁㅁㄴㅇㄹㄴㅁㅇㄹ
             <PlayRoomHead>
                 <h1>{title}</h1>
 
