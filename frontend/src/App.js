@@ -9,6 +9,10 @@ import PlayRoomListPage from './pages/PlayRoomListPage';
 import PlayRoomPage from './pages/PlayRoomPage';
 import MainPage from './pages/MainPage';
 import {Helmet} from 'react-helmet-async';
+import TutorListPage from "./pages/TutorListPage";
+import TutorPage from "./pages/TutorPage";
+import ConcertListPage from "./pages/ConcertListPage";
+import ConcertPage from "./pages/ConcertPage";
 
 const App = () => {
     return (
@@ -16,12 +20,22 @@ const App = () => {
             <Helmet>
                 <title>Muse.ac :: 뮤즈아카데미</title>
             </Helmet>
-            <Route component={PostListPage} path='/@:username'/>
-            <Route component={PlayRoomListPage} path='/playrooms'/>
-            <Route component={PlayRoomPage} path='/playroom/:playId'/>
-            <Route component={MainPage} path={['/']} exact />
+            {/*공통*/}
             <Route component={LoginPage} path="/login" />
             <Route component={RegisterPage} path="/register"/>
+            {/*메인페이지*/}
+            <Route component={MainPage} path={['/']} exact />
+            {/*실시간 합주*/}
+            <Route component={PlayRoomListPage} path='/playrooms'/>
+            <Route component={PlayRoomPage} path='/playroom/:playId'/>
+            {/*1:1 렛슨*/}
+            <Route component={TutorListPage} path='/tutors'/>
+            <Route component={TutorPage} path='/tutor/:tutorId'/>
+            {/*Live Concert*/}
+            <Route component={TutorListPage} path='/concerts'/>
+            <Route component={TutorPage} path='/concert/:concertId'/>
+            {/*게시판 - TODO*/}
+            <Route component={PostListPage} path='/@:username'/>
             <Route component={WritePage} path="/write"/>
             <Route component={PostPage} path="/@:username/:postId"/>
         </>

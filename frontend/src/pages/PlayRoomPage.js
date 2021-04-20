@@ -1,17 +1,14 @@
 import React from 'react';
 import HeaderContainer from '../containers/common/HeaderContainer';
-import MainContainer from '../containers/main/MainContainer';
+import PlayRoomViewerContainer from '../containers/playroom/PlayRoomViewerContainer';
 
-const MainPage = () => {
+const PlayRoomPage = () => {
     return (
         <>
             <HeaderContainer />
-            <center>
-                <li>Play Room </li>
-            </center>
-            <MainContainer />
+            <PlayRoomViewerContainer />
         </>
     );
 };
 
-export default MainPage;
+export default PlayRoomPage;
