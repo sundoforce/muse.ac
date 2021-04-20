@@ -19,12 +19,12 @@ const App = () => {
             <Route component={PostListPage} path='/@:username'/>
             <Route component={PlayRoomListPage} path='/playrooms'/>
             <Route component={PlayRoomPage} path='/playroom/:playId'/>
-            <Route component={MainPage} path={['/@:username', '/']} exact />
+            <Route component={MainPage} path={['/']} exact />
             <Route component={LoginPage} path="/login" />
             <Route component={RegisterPage} path="/register"/>
             <Route component={WritePage} path="/write"/>
             <Route component={PostPage} path="/@:username/:postId"/>
         </>
-    );
-};
+    )
+}
 export default App;
