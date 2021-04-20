@@ -1,0 +1,2 @@
+mongodb+srv://user:<password>@cluster1.zyvec.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+
