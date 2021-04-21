@@ -70,11 +70,11 @@ const EnsembleList = ({ rooms, loading, error, showWriteButton }) => {
 
     return (
         <EnsembleListBlock>
-            <li>방 아이디1 <Link to="/Ensemble/1">ddd</Link><Button cyan to="/Ensemble/1">Join</Button></li>
-            <li>방 아이디 2<Link to="/Ensemble/2">ddd</Link><Button cyan to="/Ensemble/2">Join</Button></li>
-            <li>방 아이디 3<Link to="/Ensemble/4">ddd</Link><Button cyan to="/Ensemble/3">Join</Button></li>
-            <li>방 아이디 4<Link to="/Ensemble/5">ddd</Link><Button cyan to="/Ensemble/4">Join</Button></li>
-            <li>방 아이디 5<Link to="/Ensemble/6">ddd</Link><Button cyan to="/Ensemble/5">Join</Button></li>
+            <li>방 아이디1 <Link to="/ensemble/1">ddd</Link><Button cyan to="/ensemble/1">Join</Button></li>
+            <li>방 아이디 2<Link to="/ensemble/2">ddd</Link><Button cyan to="/ensemble/2">Join</Button></li>
+            <li>방 아이디 3<Link to="/ensemble/4">ddd</Link><Button cyan to="/ensemble/3">Join</Button></li>
+            <li>방 아이디 4<Link to="/ensemble/5">ddd</Link><Button cyan to="/ensemble/4">Join</Button></li>
+            <li>방 아이디 5<Link to="/ensemble/6">ddd</Link><Button cyan to="/ensemble/5">Join</Button></li>
 
             <createRoomButtonWrapper>
                 {showWriteButton && (
