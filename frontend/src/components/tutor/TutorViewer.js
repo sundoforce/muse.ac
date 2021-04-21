@@ -6,10 +6,10 @@ import SubInfo from '../common/SubInfo';
 import Tags from '../common/Tags';
 import { Helmet } from 'react-helmet-async';
 
-const PlayRoomBlock = styled(Responsive)`
+const EnsembleBlock = styled(Responsive)`
   margin-top: 4rem;
 `;
-const PlayRoomHead = styled.div`
+const EnsembleHead = styled.div`
   border-bottom: 1px solid ${palette.gray[2]};
   padding-bottom: 3rem;
   margin-bottom: 3rem;
@@ -25,13 +25,13 @@ const TutorContent = styled.div`
   color: ${palette.gray[8]};
 `;
 
-const PlayRoomViewer = ({ post, error, loading, actionButtons, ownPost }) => {
+const EnsembleViewer = ({ post, error, loading, actionButtons, ownPost }) => {
     // 에러 발생 시
     if (error) {
         if (error.response && error.response.status === 404) {
-           // return <PlayRoomBlock>존재하지 않는 포스트입니다.</PlayRoomBlock>;
+           // return <EnsembleBlock>존재하지 않는 포스트입니다.</EnsembleBlock>;
         }
-        // return <PlayRoomBlock>오류 발생!</PlayRoomBlock>;
+        // return <EnsembleBlock>오류 발생!</EnsembleBlock>;
     }
 
     // 로딩중이거나, 아직 포스트 데이터가 없을 시
@@ -41,12 +41,12 @@ const PlayRoomViewer = ({ post, error, loading, actionButtons, ownPost }) => {
 
     const { title, body, user, publishedDate, tags } = post;
     return (
-        <PlayRoomBlock>
+        <EnsembleBlock>
             <Helmet>
                 <title>{title} - Muse.ac</title>
             </Helmet>
 
-            <PlayRoomHead>
+            <EnsembleHead>
                 <h1>{title}</h1>
                 <SubInfo
                     username={user.username}
@@ -54,11 +54,11 @@ const PlayRoomViewer = ({ post, error, loading, actionButtons, ownPost }) => {
                     hasMarginTop
                 />
                 <Tags tags={tags} />
-            </PlayRoomHead>
+            </EnsembleHead>
             {actionButtons}
             <TutorContent dangerouslySetInnerHTML={{ __html: body }} />
-        </PlayRoomBlock>
+        </EnsembleBlock>
     );
 };
 
-export default PlayRoomViewer;
+export default EnsembleViewer;

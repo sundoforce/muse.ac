@@ -50,10 +50,10 @@ const Header = ({ user, onLogout }) => {
           <Link to="/" className="logo">
             MUSE.AC
           </Link>
-            <Link to="/playrooms">Sync Play</Link>
+            <Link to="/ensembles">Sync Ensemble</Link>
             <Link to="/tutors">Tutors</Link>
             {/*<Link>School</Link>*/}
-            <Link to="/concerts">Live Concert</Link>
+            {/*<Link to="/concerts">Live Concert</Link>*/}
             <Link to={{ pathname: "https://muzia.net" }} target="_blank">Community</Link>
           {user ? (
             <div className="right">

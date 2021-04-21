@@ -8,7 +8,7 @@ import Responsive from "../common/Responsive";
 import Button from "../common/Button";
 
 
-const PlayRoomListBlock = styled(Responsive)`
+const EnsembleListBlock = styled(Responsive)`
   margin-top: 3rem;
 `;
 
@@ -62,19 +62,19 @@ const RoomItem = ({ room }) => {
     );
 };
 
-const PlayRoomList = ({ rooms, loading, error, showWriteButton }) => {
+const EnsembleList = ({ rooms, loading, error, showWriteButton }) => {
     // 에러 발생 시
     if (error) {
-        return <PlayRoomList>에러가 발생했습니다.</PlayRoomList>;
+        return <EnsembleList>에러가 발생했습니다.</EnsembleList>;
     }
 
     return (
-        <PlayRoomListBlock>
-            <li>방 아이디1 <Link to="/playroom/1">ddd</Link><Button cyan to="/playroom/1">Join</Button></li>
-            <li>방 아이디 2<Link to="/playroom/2">ddd</Link><Button cyan to="/playroom/2">Join</Button></li>
-            <li>방 아이디 3<Link to="/playroom/4">ddd</Link><Button cyan to="/playroom/3">Join</Button></li>
-            <li>방 아이디 4<Link to="/playroom/5">ddd</Link><Button cyan to="/playroom/4">Join</Button></li>
-            <li>방 아이디 5<Link to="/playroom/6">ddd</Link><Button cyan to="/playroom/5">Join</Button></li>
+        <EnsembleListBlock>
+            <li>방 아이디1 <Link to="/Ensemble/1">ddd</Link><Button cyan to="/Ensemble/1">Join</Button></li>
+            <li>방 아이디 2<Link to="/Ensemble/2">ddd</Link><Button cyan to="/Ensemble/2">Join</Button></li>
+            <li>방 아이디 3<Link to="/Ensemble/4">ddd</Link><Button cyan to="/Ensemble/3">Join</Button></li>
+            <li>방 아이디 4<Link to="/Ensemble/5">ddd</Link><Button cyan to="/Ensemble/4">Join</Button></li>
+            <li>방 아이디 5<Link to="/Ensemble/6">ddd</Link><Button cyan to="/Ensemble/5">Join</Button></li>
 
             <createRoomButtonWrapper>
                 {showWriteButton && (
@@ -91,9 +91,9 @@ const PlayRoomList = ({ rooms, loading, error, showWriteButton }) => {
                     ))}
                 </div>
             )}
-        </PlayRoomListBlock>
+        </EnsembleListBlock>
     );
 };
 
-export default PlayRoomList;
+export default EnsembleList;
 

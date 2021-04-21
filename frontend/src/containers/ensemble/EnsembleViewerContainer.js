@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { readPost, unloadPost } from '../../modules/post';
-import PlayRoomViewer from '../../components/playroom/PlayRoomViewer';
+import EnsembleViewer from '../../components/ensemble/EnsembleViewer';
 
-const PlayRoomViewerContainer = ({ match, history }) => {
+const EnsembleViewerContainer = ({ match, history }) => {
   // 처음 마운트될 때 포스트 읽기 API 요청
   const { postId } = match.params;
   const dispatch = useDispatch();
@@ -27,7 +27,7 @@ const PlayRoomViewerContainer = ({ match, history }) => {
 
 
   return (
-      <PlayRoomViewer
+      <EnsembleViewer
           post={post}
           loading={loading}
           error={error}
@@ -35,4 +35,4 @@ const PlayRoomViewerContainer = ({ match, history }) => {
   );
 };
 
-export default withRouter(PlayRoomViewerContainer);
+export default withRouter(EnsembleViewerContainer);

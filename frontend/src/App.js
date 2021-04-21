@@ -5,8 +5,8 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import WritePage from './pages/WritePage';
 import PostPage from './pages/PostPage';
-import PlayRoomListPage from './pages/PlayRoomListPage';
-import PlayRoomPage from './pages/PlayRoomPage';
+import EnsembleListPage from './pages/EnsembleListPage';
+import EnsemblePage from './pages/EnsemblePage';
 import MainPage from './pages/MainPage';
 import {Helmet} from 'react-helmet-async';
 import TutorListPage from "./pages/TutorListPage";
@@ -26,8 +26,8 @@ const App = () => {
             {/*메인페이지*/}
             <Route component={MainPage} path={['/']} exact />
             {/*실시간 합주*/}
-            <Route component={PlayRoomListPage} path='/playrooms'/>
-            <Route component={PlayRoomPage} path='/playroom/:playId'/>
+            <Route component={EnsembleListPage} path='/ensembles'/>
+            <Route component={EnsemblePage} path='/ensemble/:ensembleId'/>
             {/*1:1 렛슨*/}
             <Route component={TutorListPage} path='/tutors'/>
             <Route component={TutorPage} path='/tutor/:tutorId'/>

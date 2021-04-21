@@ -6,10 +6,10 @@ import SubInfo from '../common/SubInfo';
 import Tags from '../common/Tags';
 import { Helmet } from 'react-helmet-async';
 
-const PlayRoomViewerBlock = styled(Responsive)`
+const EnsembleViewerBlock = styled(Responsive)`
   margin-top: 4rem;
 `;
-const PlayRoomHead = styled.div`
+const EnsembleHead = styled.div`
   border-bottom: 1px solid ${palette.gray[2]};
   padding-bottom: 3rem;
   margin-bottom: 3rem;
@@ -20,18 +20,18 @@ const PlayRoomHead = styled.div`
   }
 `;
 
-const PlayRoomContent = styled.div`
+const EnsembleContent = styled.div`
   font-size: 1.3125rem;
   color: ${palette.gray[8]};
 `;
 
-const PlayRoomViewer = ({ post, error, loading, actionButtons, ownPost }) => {
+const EnsembleViewer = ({ post, error, loading, actionButtons, ownPost }) => {
     // 에러 발생 시
     if (error) {
         if (error.response && error.response.status === 404) {
-            return <PlayRoomViewerBlock>존재하지 않는 포스트입니다.</PlayRoomViewerBlock>;
+            return <EnsembleViewerBlock>존재하지 않는 포스트입니다.</EnsembleViewerBlock>;
         }
-        return <PlayRoomViewerBlock>오류 발생!</PlayRoomViewerBlock>;
+        return <EnsembleViewerBlock>오류 발생!</EnsembleViewerBlock>;
     }
 
     // 로딩중이거나, 아직 포스트 데이터가 없을 시
@@ -41,13 +41,13 @@ const PlayRoomViewer = ({ post, error, loading, actionButtons, ownPost }) => {
 
     const { title, body, user, publishedDate, tags } = post;
     return (
-        <PlayRoomViewerBlock>
+        <EnsembleViewerBlock>
             <Helmet>
                 <title>{title} - Muse.ac</title>
             </Helmet>
 
             ㅁㅁㄴㅇㄹㄴㅁㅇㄹ
-            <PlayRoomHead>
+            <EnsembleHead>
                 <h1>{title}</h1>
 
                 <SubInfo
@@ -56,11 +56,11 @@ const PlayRoomViewer = ({ post, error, loading, actionButtons, ownPost }) => {
                     hasMarginTop
                 />
                 <Tags tags={tags} />
-            </PlayRoomHead>
+            </EnsembleHead>
             {actionButtons}
-            <PlayRoomContent dangerouslySetInnerHTML={{ __html: body }} />
-        </PlayRoomViewerBlock>
+            <EnsembleContent dangerouslySetInnerHTML={{ __html: body }} />
+        </EnsembleViewerBlock>
     );
 };
 
-export default PlayRoomViewer;
+export default EnsembleViewer;

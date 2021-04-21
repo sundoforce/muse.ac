@@ -73,7 +73,7 @@ const ConcertList = ({ rooms, loading, error, showWriteButton }) => {
             1: N Video<br/>
             유튜브 및 다른 동영상을 재생하면서 채팅할 수 있음
 
-            <li>공연중 <Link to="/playroom/1">ddd</Link><Button cyan to="/concert/1">Join</Button></li>
+            <li>공연중 <Link to="/Ensemble/1">ddd</Link><Button cyan to="/concert/1">Join</Button></li>
 
             <createRoomButtonWrapper>
                 {showWriteButton && (
