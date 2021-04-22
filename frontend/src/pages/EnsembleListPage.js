@@ -2,7 +2,7 @@ import React from 'react';
 import HeaderContainer from '../containers/common/HeaderContainer';
 import EnsembleListContainer from '../containers/ensembles/EnsembleListContainer';
 
-const MainPage = () => {
+const EnsembleListPage = () => {
     return (
         <>
             <HeaderContainer />
@@ -11,4 +11,4 @@ const MainPage = () => {
     );
 };
 
-export default MainPage;
+export default EnsembleListPage;

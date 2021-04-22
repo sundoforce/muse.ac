@@ -26,7 +26,7 @@ const App = () => {
             {/*메인페이지*/}
             <Route component={MainPage} path={['/']} exact />
             {/*실시간 합주*/}
-            <Route component={EnsembleListPage} path='/ensembles'/>
+            <Route component={EnsembleListPage} path='/@:ensemble'/>
             <Route component={EnsemblePage} path='/ensemble/:ensembleId'/>
             {/*1:1 렛슨*/}
             <Route component={TutorListPage} path='/tutors'/>
@@ -35,9 +35,9 @@ const App = () => {
             <Route component={ConcertListPage} path='/concerts'/>
             <Route component={ConcertPage} path='/concert/:concertId'/>
             {/*게시판 - TODO*/}
-            <Route component={PostListPage} path='/@:username'/>
-            <Route component={WritePage} path="/write"/>
-            <Route component={PostPage} path="/@:username/:postId"/>
+            {/*<Route component={PostListPage} path='/@:username'/>*/}
+            {/*<Route component={WritePage} path="/write"/>*/}
+            {/*<Route component={PostPage} path="/@:username/:postId"/>*/}
         </>
     )
 }

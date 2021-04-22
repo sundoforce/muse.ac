@@ -12,13 +12,13 @@ const EnsembleListBlock = styled(Responsive)`
   margin-top: 3rem;
 `;
 
-const createRoomButtonWrapper = styled.div`
+const createEnsembleButtonWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   margin-bottom: 3rem;
 `;
 
-const RoomItemBlock = styled.div`
+const EnsembleItemBlock = styled.div`
   padding-top: 3rem;
   padding-bottom: 3rem;
   /* 맨 위 포스트는 padding-top 없음 */
@@ -42,12 +42,12 @@ const RoomItemBlock = styled.div`
   }
 `;
 
-const RoomItem = ({ room }) => {
+const EnsembleItem = ({ room }) => {
     const { publishedDate, user, tags, title, body, _id } = room;
 
     return (
         
-        <RoomItemBlock>
+        <EnsembleItemBlock>
             
             <h2>
                 <Link to={`/@${user.username}/${_id}`}>{title}</Link>
@@ -58,11 +58,11 @@ const RoomItem = ({ room }) => {
             />
             <Tags tags={tags} />
             <p>{body}</p>
-        </RoomItemBlock>
+        </EnsembleItemBlock>
     );
 };
 
-const EnsembleList = ({ rooms, loading, error, showWriteButton }) => {
+const EnsembleList = ({ id, loading, error, showWriteButton }) => {
     // 에러 발생 시
     if (error) {
         return <EnsembleList>에러가 발생했습니다.</EnsembleList>;
@@ -70,24 +70,18 @@ const EnsembleList = ({ rooms, loading, error, showWriteButton }) => {
 
     return (
         <EnsembleListBlock>
-            <li>방 아이디1 <Link to="/ensemble/1">ddd</Link><Button cyan to="/ensemble/1">Join</Button></li>
-            <li>방 아이디 2<Link to="/ensemble/2">ddd</Link><Button cyan to="/ensemble/2">Join</Button></li>
-            <li>방 아이디 3<Link to="/ensemble/4">ddd</Link><Button cyan to="/ensemble/3">Join</Button></li>
-            <li>방 아이디 4<Link to="/ensemble/5">ddd</Link><Button cyan to="/ensemble/4">Join</Button></li>
-            <li>방 아이디 5<Link to="/ensemble/6">ddd</Link><Button cyan to="/ensemble/5">Join</Button></li>
-
-            <createRoomButtonWrapper>
+            <createEnsembleButtonWrapper>
                 {showWriteButton && (
                     <Button cyan to="/write">
                         새 글 작성하기
                     </Button>
                 )}
-            </createRoomButtonWrapper>
+            </createEnsembleButtonWrapper>
             {/*  로딩 중 아니고, 포스트 배열이 존재할 때만 보여줌 */}
-            {!loading && rooms && (
+            {!loading && id && (
                 <div>
-                    {rooms.map((room) => (
-                        <RoomItem room={room} key={room._id} />
+                    {id.map((room) => (
+                        <EnsembleItem room={room} key={room._id} />
                     ))}
                 </div>
             )}

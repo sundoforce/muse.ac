@@ -1,25 +1,26 @@
 import qs from 'qs';
 import client from './client';
 
-export const writePost = ({ title, body, tags }) =>
-  client.post('/api/todos', { title, body, tags });
+export const writeEnsemble = ({ title, body, tags }) =>
+  client.post('/api/ensemble', { title, body, tags });
 
-export const readPost = id => client.get(`/api/posts/${id}`);
+export const readEnsemble = id => client.get(`/api/ensemble/${id}`);
 
-export const listPosts = ({ page, username, tag }) => {
-  const queryString = qs.stringify({
-    page,
-    username,
-    tag,
-  });
-  return client.get(`/api/todos?${queryString}`);
+export const listEnsembles = ({ ensemble, id, tag }) => {
+  // const queryString = qs.stringify({
+  //   ensemble,
+  //   id,
+  //   tag,
+  // });
+  return client.get(`/api/ensemble`);
+  // return client.get(`/api/ensemble?${queryString}`);
 };
 
-export const updatePost = ({ id, title, body, tags }) =>
-  client.patch(`/api/todos/${id}`, {
+export const updateEnsemble = ({ id, title, body, tags }) =>
+  client.patch(`/api/ensemble/${id}`, {
     title,
     body,
     tags,
   });
 
-export const removePost = id => client.delete(`/api/todos/${id}`);
+export const removeEnsemble = id => client.delete(`/api/ensemble/${id}`);
