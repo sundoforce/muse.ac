@@ -42,8 +42,8 @@ const EnsembleItemBlock = styled.div`
   }
 `;
 
-const EnsembleItem = ({ room }) => {
-    const { publishedDate, user, tags, title, body, _id } = room;
+const EnsembleItem = ({ post }) => {
+    const { publishedDate, user, tags, title, body, _id } = post;
 
     return (
         

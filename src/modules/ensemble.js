@@ -2,7 +2,7 @@ import { createAction, handleActions } from 'redux-actions';
 import createRequestSaga, {
     createRequestActionTypes,
 } from '../lib/createRequestSaga';
-import * as ensembleAPI from '../lib/api/ensemble';
+import * as ensemblesAPI from '../lib/api/ensembles';
 import { takeLatest } from 'redux-saga/effects';
 
 const [
@@ -15,7 +15,7 @@ const UNLOAD_ENSEMBLE = 'ensemble/UNLOAD_ENSEMBLE'; // 포스트 페이지에서
 export const readEnsemble = createAction(READ_ENSEMBLE, id => id);
 export const unloadEnsemble = createAction(UNLOAD_ENSEMBLE);
 
-const readEnsembleSaga = createRequestSaga(READ_ENSEMBLE, ensembleAPI.readEnsemble);
+const readEnsembleSaga = createRequestSaga(READ_ENSEMBLE, ensemblesAPI.readEnsemble);
 export function* ensembleSaga() {
     yield takeLatest(READ_ENSEMBLE, readEnsembleSaga);
 }

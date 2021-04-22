@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { readEnsemble, unloadEnsemble } from '../../modules/ensemble';
 import EnsembleViewer from '../../components/ensemble/EnsembleViewer';
-import EnsembleActionButtons from '../../components/posts/EnsembleActionButtons';
-import { setOriginalEnsemble } from '../../modules/write';
+import EnsembleActionButtons from '../../components/write/WriteActionButtons';
+import { setOriginalEnsemble } from '../../modules/writeEnsemble';
 import { removeEnsemble } from '../../lib/api/ensemble';
 
 const EnsembleViewerContainer = ({ match, history }) => {
