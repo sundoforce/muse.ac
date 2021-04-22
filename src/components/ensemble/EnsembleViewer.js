@@ -25,7 +25,7 @@ const EnsembleContent = styled.div`
   color: ${palette.gray[8]};
 `;
 
-const EnsembleViewer = ({ post, error, loading, actionButtons, ownPost }) => {
+const EnsembleViewer = ({ ensemble, error, loading, actionButtons, ownEsemble }) => {
     // 에러 발생 시
     if (error) {
         if (error.response && error.response.status === 404) {
@@ -35,11 +35,11 @@ const EnsembleViewer = ({ post, error, loading, actionButtons, ownPost }) => {
     }
 
     // 로딩중이거나, 아직 포스트 데이터가 없을 시
-    if (loading || !post) {
+    if (loading || !ensemble) {
         return null;
     }
 
-    const { title, body, user, publishedDate, tags } = post;
+    const { title, body, user, publishedDate, tags } = ensemble;
     return (
         <EnsembleViewerBlock>
             <Helmet>

@@ -14,7 +14,7 @@ const EnsembleViewerContainer = ({ match, history }) => {
     const { ensemble, error, loading, user } = useSelector(
         ({ ensemble, loading, user }) => ({
             ensemble: ensemble.ensemble,
-            error: ensemble.error,
+            error: ensemble.ensemble,
             loading: loading['ensemble/READ_POST'],
             user: user.user,
         }),

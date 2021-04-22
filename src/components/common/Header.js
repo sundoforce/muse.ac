@@ -50,7 +50,7 @@ const Header = ({ user, onLogout }) => {
           <Link to="/" className="logo">
             MUSE.AC
           </Link>
-            <Link to="/ensemble">Sync Ensemble</Link>
+            <Link to="/ensembles">Sync Ensemble</Link>
             <Link to="/tutors">Tutors</Link>
             {/*<Link>School</Link>*/}
             {/*<Link to="/concerts">Live Concert</Link>*/}

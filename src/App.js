@@ -26,8 +26,8 @@ const App = () => {
             {/*메인페이지*/}
             <Route component={MainPage} path={['/']} exact />
             {/*실시간 합주*/}
-            <Route component={EnsembleListPage} path='/@:ensemble'/>
-            <Route component={EnsemblePage} path='/ensemble/:ensembleId'/>
+            <Route component={EnsembleListPage} path='/@:username'/>
+            <Route component={EnsemblePage} path='/ensembles/:ensembleId'/>
             {/*1:1 렛슨*/}
             <Route component={TutorListPage} path='/tutors'/>
             <Route component={TutorPage} path='/tutor/:tutorId'/>
