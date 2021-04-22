@@ -34,10 +34,10 @@ const App = () => {
             {/*Live Concert*/}
             <Route component={ConcertListPage} path='/concerts'/>
             <Route component={ConcertPage} path='/concert/:concertId'/>
-            {/*게시판 - TODO*/}
-            {/*<Route component={PostListPage} path='/@:username'/>*/}
-            {/*<Route component={WritePage} path="/write"/>*/}
-            {/*<Route component={PostPage} path="/@:username/:postId"/>*/}
+            {/*게시판 - */}
+            <Route component={PostListPage} path='/@:username'/>
+            <Route component={WritePage} path="/write"/>
+            <Route component={PostPage} path="/@:username/:postId"/>
         </>
     )
 }

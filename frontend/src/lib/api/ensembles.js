@@ -7,13 +7,12 @@ export const writeEnsemble = ({ title, body, tags }) =>
 export const readEnsemble = id => client.get(`/api/ensemble/${id}`);
 
 export const listEnsembles = ({ ensemble, id, tag }) => {
-  // const queryString = qs.stringify({
-  //   ensemble,
-  //   id,
-  //   tag,
-  // });
-  return client.get(`/api/ensemble`);
-  // return client.get(`/api/ensemble?${queryString}`);
+  const queryString = qs.stringify({
+    ensemble,
+    id,
+    tag,
+  });
+  return client.get(`/api/ensemble?${queryString}`);
 };
 
 export const updateEnsemble = ({ id, title, body, tags }) =>

@@ -1,45 +1,43 @@
 import { createAction, handleActions } from 'redux-actions';
 import createRequestSaga, {
-  createRequestActionTypes,
+    createRequestActionTypes,
 } from '../lib/createRequestSaga';
-import * as ensemblesAPI from '../lib/api/ensemble';
+import * as ensembleAPI from '../lib/api/ensemble';
 import { takeLatest } from 'redux-saga/effects';
 
 const [
-  LIST_ENSEMBLE,
-  LIST_ENSEMBLE_SUCCESS,
-  LIST_ENSEMBLE_FAILURE,
-] = createRequestActionTypes('ensemble/LIST_ENSEMBLE');
+    READ_ENSEMBLE,
+    READ_ENSEMBLE_SUCCESS,
+    READ_ENSEMBLE_FAILURE,
+] = createRequestActionTypes('ensemble/READ_ENSEMBLE');
+const UNLOAD_ENSEMBLE = 'ensemble/UNLOAD_ENSEMBLE'; // 포스트 페이지에서 벗어날 때 데이터 비우기
 
-export const listEnsemble = createAction(
-  LIST_ENSEMBLE,
-  ({ tag, username, page }) => ({ tag, username, page }),
-);
+export const readEnsemble = createAction(READ_ENSEMBLE, id => id);
+export const unloadEnsemble = createAction(UNLOAD_ENSEMBLE);
 
-const listEnsembleSaga = createRequestSaga(LIST_ENSEMBLE, ensemblesAPI.listEnsemble);
-export function* ensemblesSaga() {
-  yield takeLatest(LIST_ENSEMBLE, listEnsembleSaga);
+const readEnsembleSaga = createRequestSaga(READ_ENSEMBLE, ensembleAPI.readEnsemble);
+export function* ensembleSaga() {
+    yield takeLatest(READ_ENSEMBLE, readEnsembleSaga);
 }
 
 const initialState = {
-  ensemble: null,
-  error: null,
-  lastPage: 1,
+    ensemble: null,
+    error: null,
 };
 
 const ensemble = handleActions(
-  {
-    [LIST_ENSEMBLE_SUCCESS]: (state, { payload: ensemble, meta: response }) => ({
-      ...state,
-      ensemble,
-      lastPage: parseInt(response.headers['last-page'], 10), // 문자열을 숫자로 변환
-    }),
-    [LIST_ENSEMBLE_FAILURE]: (state, { payload: error }) => ({
-      ...state,
-      error,
-    }),
-  },
-  initialState,
+    {
+        [READ_ENSEMBLE_SUCCESS]: (state, { payload: ensemble }) => ({
+            ...state,
+            ensemble,
+        }),
+        [READ_ENSEMBLE_FAILURE]: (state, { payload: error }) => ({
+            ...state,
+            error,
+        }),
+        [UNLOAD_ENSEMBLE]: () => initialState,
+    },
+    initialState,
 );
 
 export default ensemble;
