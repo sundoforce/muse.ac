@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import palette from '../../lib/styles/palette';
 import Responsive from '../common/Responsive';
 import SubInfo from '../common/SubInfo';
-import Tags from '../common/Tags';
 import { Helmet } from 'react-helmet-async';
 
 const EnsembleViewerBlock = styled(Responsive)`
@@ -39,26 +38,29 @@ const EnsembleViewer = ({ ensemble, error, loading, actionButtons, ownEsemble })
         return null;
     }
 
-    const { title, body, user, publishedDate, tags } = ensemble;
+    const { title, content, createdAt } = ensemble;
     return (
         <EnsembleViewerBlock>
             <Helmet>
                 <title>{title} - Muse.ac</title>
             </Helmet>
 
-            ㅁㅁㄴㅇㄹㄴㅁㅇㄹ
+
             <EnsembleHead>
                 <h1>{title}</h1>
 
                 <SubInfo
-                    username={user.username}
-                    publishedDate={publishedDate}
+                    title={title}
+                    createdAt={createdAt}
                     hasMarginTop
                 />
-                <Tags tags={tags} />
+               <p> 볼륨 조정 영역,</p>
+               <p> 오디오 설정,</p>
+               <p> 실시간 화이트 보드 공유 영역</p>
+               <p> TEXT 채팅 영역</p>
             </EnsembleHead>
             {actionButtons}
-            <EnsembleContent dangerouslySetInnerHTML={{ __html: body }} />
+            <EnsembleContent dangerouslySetInnerHTML={{ __html: content }} />
         </EnsembleViewerBlock>
     );
 };

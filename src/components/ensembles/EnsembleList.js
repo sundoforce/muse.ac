@@ -3,7 +3,6 @@ import {Link} from "react-router-dom";
 import styled from "styled-components";
 import palette from "../../lib/styles/palette";
 import SubInfo from "../common/SubInfo";
-import Tags from "../common/Tags";
 import Responsive from "../common/Responsive";
 import Button from "../common/Button";
 
@@ -12,7 +11,7 @@ const EnsembleListBlock = styled(Responsive)`
   margin-top: 3rem;
 `;
 
-const createEnsembleButtonWrapper = styled.div`
+const CreateEnsembleButtonWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   margin-bottom: 3rem;
@@ -42,27 +41,25 @@ const EnsembleItemBlock = styled.div`
   }
 `;
 
-const EnsembleItem = ({ post }) => {
-    const { publishedDate, user, tags, title, body, _id } = post;
+const EnsembleItem = ({ ensemble }) => {
+    const { title, content, id, createdAt } = ensemble;
 
     return (
         
         <EnsembleItemBlock>
-            
             <h2>
-                <Link to={`/@${user.username}/${_id}`}>{title}</Link>
+                <Link to={`/ensembles/${id}`}>{title}</Link>
+
             </h2>
-            <SubInfo
-                username={user.username}
-                publishedDate={new Date(publishedDate)}
+            <SubInfo createdAt={createdAt}
+                     content={content}
             />
-            <Tags tags={tags} />
-            <p>{body}</p>
+            <p>{content}</p>
         </EnsembleItemBlock>
     );
 };
 
-const EnsembleList = ({ id, loading, error, showWriteButton }) => {
+const EnsembleList = ({ ensembles, loading, error, showWriteButton }) => {
     // 에러 발생 시
     if (error) {
         return <EnsembleList>에러가 발생했습니다.</EnsembleList>;
@@ -70,18 +67,18 @@ const EnsembleList = ({ id, loading, error, showWriteButton }) => {
 
     return (
         <EnsembleListBlock>
-            <createEnsembleButtonWrapper>
+            <CreateEnsembleButtonWrapper>
                 {showWriteButton && (
                     <Button cyan to="/write">
                         새 글 작성하기
                     </Button>
                 )}
-            </createEnsembleButtonWrapper>
+            </CreateEnsembleButtonWrapper>
             {/*  로딩 중 아니고, 포스트 배열이 존재할 때만 보여줌 */}
-            {!loading && id && (
+            {!loading && ensembles && (
                 <div>
-                    {id.map((room) => (
-                        <EnsembleItem room={room} key={room._id} />
+                    {ensembles.data.ensembles.map((ensemble) => (
+                        <EnsembleItem ensemble={ensemble} key={ensemble._id} />
                     ))}
                 </div>
             )}
