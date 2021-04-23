@@ -7,7 +7,7 @@ import WritePage from './pages/WritePage';
 import PostPage from './pages/PostPage';
 import EnsembleListPage from './pages/EnsembleListPage';
 import EnsemblePage from './pages/EnsemblePage';
-import MainPage from './pages/MainPage';
+// import MainPage from './pages/MainPage';
 import {Helmet} from 'react-helmet-async';
 import TutorListPage from "./pages/TutorListPage";
 import TutorPage from "./pages/TutorPage";
@@ -24,7 +24,7 @@ const App = () => {
             <Route component={LoginPage} path="/login" />
             <Route component={RegisterPage} path="/register"/>
             {/*메인페이지*/}
-            <Route component={MainPage} path={['/']} exact />
+            {/*<Route component={MainPage} path={['/']} exact />*/}
             {/*실시간 합주*/}
             <Route component={EnsembleListPage} path='/@:username'/>
             <Route component={EnsemblePage} path='/ensembles/:ensembleId'/>
@@ -35,7 +35,7 @@ const App = () => {
             <Route component={ConcertListPage} path='/concerts'/>
             <Route component={ConcertPage} path='/concert/:concertId'/>
             {/*게시판 - */}
-            <Route component={PostListPage} path='/@:username'/>
+            <Route component={PostListPage} path={['/@:username', '/']} exact />
             <Route component={WritePage} path="/write"/>
             <Route component={PostPage} path="/@:username/:postId"/>
         </>
