@@ -22,9 +22,9 @@
   },
   "scripts": {
     "start": "export PORT=3001 && node_modules/.bin/react-scripts start --hot --host 0.0.0.0",
-    "build": "frontend/node_modules/.bin/react-scripts build",
-    "test": "frontend/node_modules/.bin/react-scripts test",
-    "eject": "frontend/node_modules/.bin/react-scripts eject"
+    "build": "node_modules/.bin/react-scripts build",
+    "test": "node_modules/.bin/react-scripts test",
+    "eject": "node_modules/.bin/react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"

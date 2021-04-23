@@ -5,7 +5,7 @@ import { readEnsemble, unloadEnsemble } from '../../modules/ensemble';
 import EnsembleViewer from '../../components/ensemble/EnsembleViewer';
 import EnsembleActionButtons from '../../components/write/WriteActionButtons';
 import { setOriginalEnsemble } from '../../modules/writeEnsemble';
-import { removeEnsemble } from '../../lib/api/ensemble';
+import { removeEnsemble } from '../../lib/api/ensembles';
 
 const EnsembleViewerContainer = ({ match, history }) => {
     // 처음 마운트될 때 포스트 읽기 API 요청

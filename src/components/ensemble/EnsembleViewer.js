@@ -55,6 +55,10 @@ const EnsembleViewer = ({ ensemble, error, loading, actionButtons, ownEsemble })
                     createdAt={createdAt}
                     hasMarginTop
                 />
+                볼륨 조정 영역,
+                오디오 설정,
+                실시간 화이트 보드 공유 영역
+                TEXT 채팅 영역
             </EnsembleHead>
             {actionButtons}
             <EnsembleContent dangerouslySetInnerHTML={{ __html: content }} />
