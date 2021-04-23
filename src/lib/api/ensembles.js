@@ -12,7 +12,7 @@ export const listEnsembles = ({ ensemble, id, tag }) => {
     id,
     tag,
   });
-  return client.get(`/api/ensembles`);
+  return client.get(`/api/ensembles?${queryString}`);
 };
 
 export const updateEnsemble = ({ id, title, body, tags }) =>

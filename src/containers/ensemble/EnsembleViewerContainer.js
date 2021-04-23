@@ -5,18 +5,17 @@ import { readEnsemble, unloadEnsemble } from '../../modules/ensemble';
 import EnsembleViewer from '../../components/ensemble/EnsembleViewer';
 import EnsembleActionButtons from '../../components/write/WriteActionButtons';
 import { setOriginalEnsemble } from '../../modules/writeEnsemble';
-import { removeEnsemble } from '../../lib/api/ensembles';
+import { removeEnsemble } from '../../lib/api/ensemble';
 
 const EnsembleViewerContainer = ({ match, history }) => {
     // 처음 마운트될 때 포스트 읽기 API 요청
     const { ensembleId } = match.params;
     const dispatch = useDispatch();
-    const { ensembles, error, loading, user } = useSelector(
-        ({ ensembles, loading, user }) => ({
-            ensembles: ensembles.ensembles,
-            error: ensembles.ensembles,
-            loading: loading['ensembles/READ_POST'],
-            user: user.user,
+    const { ensemble, error, loading, user } = useSelector(
+        ({ ensemble, loading, user }) => ({
+            ensemble: ensemble,
+            error: ensemble,
+            loading: loading['ensemble/READ_POST'],
         }),
     );
 
@@ -29,7 +28,7 @@ const EnsembleViewerContainer = ({ match, history }) => {
     }, [dispatch, ensembleId]);
 
     const onEdit = () => {
-        dispatch(setOriginalEnsemble(ensembles));
+        dispatch(setOriginalEnsemble(ensemble));
         history.push('/write');
     };
 
@@ -42,16 +41,13 @@ const EnsembleViewerContainer = ({ match, history }) => {
         }
     };
 
-    const ownEnsemble = (user && user._id) === (ensembles && ensembles.user._id);
 
     return (
         <EnsembleViewer
-            ensembles={ensembles}
+            ensemble={ensemble}
             loading={loading}
             error={error}
-            actionButtons={
-                ownEnsemble && <EnsembleActionButtons onEdit={onEdit} onRemove={onRemove} />
-            }
+
         />
     );
 };

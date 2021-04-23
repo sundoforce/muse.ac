@@ -39,26 +39,25 @@ const EnsembleViewer = ({ ensemble, error, loading, actionButtons, ownEsemble })
         return null;
     }
 
-    const { title, body, user, publishedDate, tags } = ensemble;
+    const { title, content, createdAt } = ensemble;
     return (
         <EnsembleViewerBlock>
             <Helmet>
                 <title>{title} - Muse.ac</title>
             </Helmet>
 
-            ㅁㅁㄴㅇㄹㄴㅁㅇㄹ
+
             <EnsembleHead>
                 <h1>{title}</h1>
 
                 <SubInfo
-                    username={user.username}
-                    publishedDate={publishedDate}
+                    title={title}
+                    createdAt={createdAt}
                     hasMarginTop
                 />
-                <Tags tags={tags} />
             </EnsembleHead>
             {actionButtons}
-            <EnsembleContent dangerouslySetInnerHTML={{ __html: body }} />
+            <EnsembleContent dangerouslySetInnerHTML={{ __html: content }} />
         </EnsembleViewerBlock>
     );
 };
