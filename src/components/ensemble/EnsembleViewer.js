@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import palette from '../../lib/styles/palette';
 import Responsive from '../common/Responsive';
 import SubInfo from '../common/SubInfo';
-import Tags from '../common/Tags';
 import { Helmet } from 'react-helmet-async';
 
 const EnsembleViewerBlock = styled(Responsive)`
@@ -55,10 +54,10 @@ const EnsembleViewer = ({ ensemble, error, loading, actionButtons, ownEsemble })
                     createdAt={createdAt}
                     hasMarginTop
                 />
-                볼륨 조정 영역,
-                오디오 설정,
-                실시간 화이트 보드 공유 영역
-                TEXT 채팅 영역
+               <p> 볼륨 조정 영역,</p>
+               <p> 오디오 설정,</p>
+               <p> 실시간 화이트 보드 공유 영역</p>
+               <p> TEXT 채팅 영역</p>
             </EnsembleHead>
             {actionButtons}
             <EnsembleContent dangerouslySetInnerHTML={{ __html: content }} />
