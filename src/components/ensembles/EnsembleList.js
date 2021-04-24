@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import styled from "styled-components";
 import palette from "../../lib/styles/palette";
 import SubInfo from "../common/SubInfo";
+// import Tags from "../common/Tags";
 import Responsive from "../common/Responsive";
 import Button from "../common/Button";
 
@@ -47,12 +48,12 @@ const EnsembleItem = ({ ensemble }) => {
     return (
         
         <EnsembleItemBlock>
+            
             <h2>
                 <Link to={`/ensembles/${id}`}>{title}</Link>
 
             </h2>
             <SubInfo createdAt={createdAt}
-                     content={content}
             />
             <p>{content}</p>
         </EnsembleItemBlock>

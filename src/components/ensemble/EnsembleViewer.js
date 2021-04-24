@@ -3,7 +3,9 @@ import styled from 'styled-components';
 import palette from '../../lib/styles/palette';
 import Responsive from '../common/Responsive';
 import SubInfo from '../common/SubInfo';
+// import Tags from '../common/Tags';
 import { Helmet } from 'react-helmet-async';
+import Tags from "../common/Tags";
 
 const EnsembleViewerBlock = styled(Responsive)`
   margin-top: 4rem;
