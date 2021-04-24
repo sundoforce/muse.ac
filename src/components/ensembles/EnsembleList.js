@@ -78,8 +78,8 @@ const EnsembleList = ({ ensembles, loading, error, showWriteButton }) => {
             {/*  로딩 중 아니고, 포스트 배열이 존재할 때만 보여줌 */}
             {!loading && ensembles && (
                 <div>
-                    {ensembles.data.ensembles.map((ensemble) => (
-                        <EnsembleItem ensemble={ensemble} key={ensemble._id} />
+                    {ensembles.data.ensembles.map((ensemble, index) => (
+                        <EnsembleItem ensemble={ensemble} key={ensemble.id} ensembleId={ensemble.id} keys={index} />
                     ))}
                 </div>
             )}

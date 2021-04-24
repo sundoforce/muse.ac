@@ -42,27 +42,46 @@ const EnsembleViewer = ({ ensemble, error, loading, actionButtons, ownEsemble })
 
     const { title, content, createdAt } = ensemble;
     return (
+        // <EnsembleViewerBlock>
+        //     <Helmet>
+        //         <title>{title} - Muse.ac</title>
+        //     </Helmet>
+        //
+        //             asdfasdf
+        //     <EnsembleHead>
+        //         <h1>{title}</h1>
+        //
+        //         <SubInfo
+        //             title={title}
+        //             createdAt={createdAt}
+        //             hasMarginTop
+        //         />
+        //         {/*볼륨 조정 영역,*/}
+        //         {/*오디오 설정,*/}
+        //         {/*실시간 화이트 보드 공유 영역*/}
+        //         {/*TEXT 채팅 영역*/}
+        //     </EnsembleHead>
+        //     {actionButtons}
+        //     <EnsembleContent dangerouslySetInnerHTML={{ __html: content }} />
+        // </EnsembleViewerBlock>
         <EnsembleViewerBlock>
-            <Helmet>
-                <title>{title} - Muse.ac</title>
-            </Helmet>
-
-
             <EnsembleHead>
-                <h1>{title}</h1>
-
-                <SubInfo
-                    title={title}
-                    createdAt={createdAt}
-                    hasMarginTop
-                />
-               <p> 볼륨 조정 영역,</p>
-               <p> 오디오 설정,</p>
-               <p> 실시간 화이트 보드 공유 영역</p>
-               <p> TEXT 채팅 영역</p>
+                <h1>제목</h1>
+                <SubInfo>
+          <span>
+            <b>tester</b>
+          </span>
+                    <span>{new Date().toLocaleDateString()}</span>
+                </SubInfo>
+                <Tags>
+                    <div className="tag">#태그1</div>
+                    <div className="tag">#태그2</div>
+                    <div className="tag">#태그3</div>
+                </Tags>
             </EnsembleHead>
-            {actionButtons}
-            <EnsembleContent dangerouslySetInnerHTML={{ __html: content }} />
+            <EnsembleContent
+                dangerouslySetInnerHTML={{__html: '<p>HTML <b>내용</b>입니다.</p>'}}
+            />
         </EnsembleViewerBlock>
     );
 };

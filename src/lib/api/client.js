@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const client = axios.create();
 
-const DEBUG = process.env.NODE_ENV === "development";
+// const DEBUG = process.env.NODE_ENV === "development";
 
 /**
   // 글로벌 설정 예시:

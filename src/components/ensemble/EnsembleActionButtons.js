@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import palette from '../../lib/styles/palette';
-import AskRemoveModal from './AskRemoveModal';
+import AskRemoveModal from '../post/AskRemoveModal';
 
 const EnsembleActionButtonsBlock = styled.div`
   display: flex;

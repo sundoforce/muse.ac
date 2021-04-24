@@ -41,23 +41,42 @@ const PostViewer = ({ post, error, loading, actionButtons, ownPost }) => {
 
   const { title, body, user, publishedDate, tags } = post;
   return (
-    <PostViewerBlock>
-      <Helmet>
-        <title>{title} - Muse.ac</title>
-      </Helmet>
-
-      <PostHead>
-        <h1>{title}</h1>
-        <SubInfo
-          username={user.username}
-          publishedDate={publishedDate}
-          hasMarginTop
-        />
-        <Tags tags={tags} />
-      </PostHead>
-      {actionButtons}
-      <PostContent dangerouslySetInnerHTML={{ __html: body }} />
-    </PostViewerBlock>
+    // <PostViewerBlock>
+    //   <Helmet>
+    //     <title>{title} - Muse.ac</title>
+    //   </Helmet>
+    //
+    //   <PostHead>
+    //     <h1>{title}</h1>
+    //     <SubInfo
+    //       username={user.username}
+    //       publishedDate={publishedDate}
+    //       hasMarginTop
+    //     />
+    //     <Tags tags={tags} />
+    //   </PostHead>
+    //   {actionButtons}
+    //   <PostContent dangerouslySetInnerHTML={{ __html: body }} />
+    // </PostViewerBlock>
+      <PostViewerBlock>
+          <PostHead>
+              <h1>제목</h1>
+              <SubInfo>
+          <span>
+            <b>tester</b>
+          </span>
+                  <span>{new Date().toLocaleDateString()}</span>
+              </SubInfo>
+              <Tags>
+                  <div className="tag">#태그1</div>
+                  <div className="tag">#태그2</div>
+                  <div className="tag">#태그3</div>
+              </Tags>
+          </PostHead>
+          <PostContent
+              dangerouslySetInnerHTML={{__html: '<p>HTML <b>내용</b>입니다.</p>'}}
+          />
+      </PostViewerBlock>
   );
 };
 

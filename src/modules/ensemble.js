@@ -21,15 +21,15 @@ export function* ensembleSaga() {
 }
 
 const initialState = {
-    ensemble: null,
+    ensembleId: null,
     error: null,
 };
 
 const ensemble = handleActions(
     {
-        [READ_ENSEMBLE_SUCCESS]: (state, { payload: ensemble }) => ({
+        [READ_ENSEMBLE_SUCCESS]: (state, { payload: ensembleId }) => ({
             ...state,
-            ensemble,
+            ensembleId,
         }),
         [READ_ENSEMBLE_FAILURE]: (state, { payload: error }) => ({
             ...state,
