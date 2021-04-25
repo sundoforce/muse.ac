@@ -45,7 +45,7 @@ const Header = () => {
     <>
       <HeaderBlock>
         <Wrapper>
-          <Link className="logo">
+          <Link to="/" className="logo">
             MUSE.AC
           </Link>
             <Link to="/ensembles">Ensemble</Link>
