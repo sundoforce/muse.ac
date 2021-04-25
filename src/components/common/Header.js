@@ -48,10 +48,8 @@ const Header = () => {
           <Link to="/" className="logo">
             MUSE.AC
           </Link>
-            <Link to="/ensembles">Ensemble</Link>
+            <Link to="/">Ensemble</Link>
             <Link to="/tutors">Tutors</Link>
-          {/*  <Link>School</Link>*/}
-          {/*  /!*<Link to="/concerts">Live Concert</Link>*!/*/}
             <Link to={{ pathname: "https://muzia.net" }} target="_blank">Community</Link>
             <div className="right">
                 <Button to={{ pathname: "https://muzia.net/bbs/login.php" }} target="_blank">로그인</Button>

@@ -10,7 +10,7 @@ const App = () => {
                 <title>Muse.ac :: 뮤즈아카데미</title>
             </Helmet>
             {/*공통*/}
-            <Route component={Main} path={['/']} exact />
+            <Route component={Main} path={['/', '/main']} exact />
             <Route component={Test} path='/tutors'/>
         </>
     )

@@ -1,11 +1,11 @@
 import React from 'react';
 import Header from './common/Header'
-import { Typography, AppBar } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 
 import VideoPlayer from "./tutor/VideoPlayer";
 import Sidebar from "./tutor/Sidebar";
 import Notifications from "./tutor/Notifications";
+import {ContextProvider} from "../Context";
 
 const useStyles = makeStyles((theme) => ({
     appBar: {
@@ -36,17 +36,16 @@ const Test = () => {
     const classes = useStyles();
     return (
         <>
-
             <Header/>
             <div className={classes.wrapper}>
-                <AppBar className={classes.appBar} position="static" color="inherit">
-                    <Typography variant="h5" align="center">kakak</Typography>
-                </AppBar>
-                <VideoPlayer />
-                <Sidebar>
-                    <Notifications />
-                </Sidebar>
+                <ContextProvider>
+                    <VideoPlayer/>
+                    <Sidebar>
+                        <Notifications/>
+                    </Sidebar>
+                </ContextProvider>
             </div>
+
         </>
     );
 };

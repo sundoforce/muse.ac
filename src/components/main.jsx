@@ -6,7 +6,7 @@ const Main = () => {
         <>
             <Header/>
             <div>
-                <Typography variant="h2" align="center">Video Chat</Typography>
+                <Typography variant="h5" align="center">Main</Typography>
             </div>
         </>
     );
