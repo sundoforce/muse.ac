@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Responsive from './Responsive';
 import Button from './Button';
 
+
 const HeaderBlock = styled.div`
   position: fixed;
   width: 100%;
@@ -37,36 +38,24 @@ const Spacer = styled.div`
   height: 4rem;
 `;
 
-const UserInfo = styled.div`
-  font-weight: 800;
-  margin-right: 1rem;
-`;
 
-const Header = ({ user, onLogout }) => {
+
+const Header = () => {
   return (
     <>
       <HeaderBlock>
         <Wrapper>
-          <Link to="/" className="logo">
+          <Link className="logo">
             MUSE.AC
           </Link>
             <Link to="/ensembles">Ensemble</Link>
             <Link to="/tutors">Tutors</Link>
-            {/*<Link>School</Link>*/}
-            {/*<Link to="/concerts">Live Concert</Link>*/}
+          {/*  <Link>School</Link>*/}
+          {/*  /!*<Link to="/concerts">Live Concert</Link>*!/*/}
             <Link to={{ pathname: "https://muzia.net" }} target="_blank">Community</Link>
-          {user ? (
             <div className="right">
-              <UserInfo>{user.username}</UserInfo>
-              <Button onClick={onLogout}>로그아웃</Button>
+                <Button to={{ pathname: "https://muzia.net/bbs/login.php" }} target="_blank">로그인</Button>
             </div>
-          ) : (
-            <div className="right">
-              <Button to="/login">로그인</Button>
-
-              <Button to={{ pathname: "https://muzia.net/bbs/login.php" }} target="_blank">로그인</Button>
-            </div>
-          )}
         </Wrapper>
       </HeaderBlock>
       <Spacer />
