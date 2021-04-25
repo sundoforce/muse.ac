@@ -4,7 +4,7 @@ import Peer from 'simple-peer';
 
 const SocketContext = createContext();
 
-const socket = io('http://192.168.55.131:5000');
+const socket = io('http://localhost:5000');
 
 
 const ContextProvider = ({children}) => {
@@ -20,14 +20,23 @@ const ContextProvider = ({children}) => {
     const connectionRef = useRef();
 
     useEffect(() => {
-        // if ('mediaDevices' in na1vigator) {
-        navigator.mediaDevices.getUserMedia({video: true, audio: true})
-            .then((currentStream) => {
-                setStream(currentStream);
 
-                myVideo.current.srcObject = currentStream;
-            });
-        // }
+        if ('mediaDevices' in navigator) {
+            try {
+                navigator.mediaDevices.getUserMedia({video: true, audio: true})
+                    .then((currentStream) => {
+                        setStream(currentStream);
+
+                        myVideo.current.srcObject = currentStream;
+                    });
+            } catch (err) {
+                if (err.name != "TypeError") {
+                    throw err;
+                }
+                // Even if they do, they may only support MediaStream
+            }
+        } else {
+        }
 
         socket.on('me', (id) => setMe(id));
 
