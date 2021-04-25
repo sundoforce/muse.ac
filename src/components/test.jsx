@@ -30,8 +30,12 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         width: '100%',
     },
+
 }));
+
 const Test = () => {
+    // window.location.replace("/");
+
     const classes = useStyles();
     return (
         <>

@@ -38,7 +38,7 @@ const Spacer = styled.div`
   height: 4rem;
 `;
 
-
+// window.location.replace("/")
 
 const Header = () => {
   return (
@@ -49,7 +49,8 @@ const Header = () => {
             MUSE.AC
           </Link>
             <Link to="/">Ensemble</Link>
-            <Link to="/tutors">Tutors</Link>
+
+            <Link to="/tutors" >Tutors</Link>
             <Link to={{ pathname: "https://muzia.net" }} target="_blank">Community</Link>
             <div className="right">
                 <Button to={{ pathname: "https://muzia.net/bbs/login.php" }} target="_blank">로그인</Button>
