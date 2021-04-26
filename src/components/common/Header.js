@@ -50,7 +50,7 @@ const Header = () => {
           </Link>
             <Link to="/">Ensemble</Link>
             <Link to="/tutors" >Tutors</Link>
-            <Link to="/lives" >Live</Link>
+            <Link to="/rooms" >Rooms</Link>
             <Link to={{ pathname: "https://muzia.net" }} target="_blank">Community</Link>
             <div className="right">
                 <Button to={{ pathname: "https://muzia.net/bbs/login.php" }} target="_blank">로그인</Button>

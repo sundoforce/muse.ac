@@ -2,6 +2,8 @@ import React from 'react';
 import {Route} from 'react-router-dom';
 import {Helmet} from 'react-helmet-async';
 import Test from './components/test'
+import CreateRoom from "./components/room/CreateRoom";
+import Room from "./components/room/Room";
 const App = () => {
     return (
         <>
@@ -11,6 +13,8 @@ const App = () => {
             {/*공통*/}
             {/*window.location.replace("/")*/}
             <Route component={Test} path={['/', '/tutors']} exact />
+            <Route component={CreateRoom} path={'/rooms'} exact />
+            <Route component={Room} path={'/room/:roomID'} exact />
         </>
     )
 }
