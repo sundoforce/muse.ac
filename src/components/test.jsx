@@ -5,6 +5,7 @@ import {makeStyles} from '@material-ui/core/styles';
 import VideoPlayer from "./tutor/VideoPlayer";
 import Sidebar from "./tutor/Sidebar";
 import Notifications from "./tutor/Notifications";
+import {ContextProvider} from "../Context";
 
 const useStyles = makeStyles((theme) => ({
     appBar: {
@@ -40,12 +41,14 @@ const Test = () => {
     return (
         <>
             <Header/>
+            <ContextProvider>
             <div className={classes.wrapper}>
                     <VideoPlayer/>
                     <Sidebar>
                         <Notifications/>
                     </Sidebar>
             </div>
+            </ContextProvider>
 
         </>
     );
